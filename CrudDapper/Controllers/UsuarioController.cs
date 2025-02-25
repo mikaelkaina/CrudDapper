@@ -70,18 +70,5 @@ namespace CrudDapper.Controllers
             return Ok(usuarios);
         }
 
-        [HttpDelete]
-        public async Task<IActionResult> RemoverUsuarios(int usuarioId)
-        {
-            var usuarios = await _usuarioInterface.RemoverUsuario(usuarioId);
-
-            if (usuarios.Status == false)
-            {
-                return BadRequest(usuarios);
-            }
-
-            return Ok(usuarios);
-        }
-
     }
 }
